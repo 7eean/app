@@ -9,6 +9,8 @@ def family(request):
     mama = MyFamily(nombre = "Matilde", edad = 49, fechaCumple = '2022-12-15',)
     mama.save() 
 
+    contexto = {"mama": mama}
+
 
     # miHtML = open("C:/Users/gomez/Desktop/Coding/Python/ProyectoCoder/AppCoder/templates/index.html")
     # plantilla = Template(miHtML.read())
@@ -19,7 +21,7 @@ def family(request):
 
     plantilla = loader.get_template("index.html")
     
-    documento = plantilla.render(mama)
+    documento = plantilla.render(contexto)
 
     return HttpResponse(documento)
 
