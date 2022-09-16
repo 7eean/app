@@ -9,6 +9,7 @@ def family(request):
     mama = MyFamily(nombre = "Matilde", edad = 49, fechaCumple = '2022-12-15',)
     mama.save() 
 
+
     abuela = MyFamily(nombre = "Julia", edad = 79, fechaCumple = '2022-7-13',)
     abuela.save()
 
