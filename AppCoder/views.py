@@ -1,41 +1,58 @@
-from re import template
-from django.template import loader
-from AppCoder.models import MyFamily
-from django.http import HttpResponse
+from http.client import HTTPResponse
+from django.shortcuts import render
+from AppCoder.models import Curso
+from AppCoder.forms import CursoFormulario
 # Create your views here.
 
-def family(request):
+def inicio(request):
 
-    mama = MyFamily(nombre = "Matilde", edad = 49, fechaCumple = '2022-12-15',)
-    mama.save() 
+    return render(request,"index.html")
 
+def cursos(request):
 
-    abuela = MyFamily(nombre = "Julia", edad = 79, fechaCumple = '2022-7-13',)
-    abuela.save()
+    cursoPython = Curso(nombre="Python", camada=41635)
+    cursoPython.save()
 
-    papa = MyFamily(nombre= "Ivan", edad = 47, fechaCumple = '2022-8-9',)
-    papa.save()
+    if request.method == "POST":
 
-    contexto = {"mama":mama, "abuela":abuela, "papa":papa }
+        formulario1 = CursoFormulario(request.POST)
 
+        if formulario1.is_valid():
 
-    # miHtML = open("C:/Users/gomez/Desktop/Coding/Python/ProyectoCoder/AppCoder/templates/index.html")
-    # plantilla = Template(miHtML.read())
-    # miHtML.close()
-    # miContexto = Context(family)
-    # documento = plantilla.render(miContexto)
-    # return HttpResponse(documento)
+            info = formulario1.cleaned_data
 
-    plantilla = loader.get_template("index.html")
+            curso = Curso(nombre=info["curso"], camada=info["camada"])
+
+            curso.save()
+
+            return render(request, "index.html")
     
-    documento = plantilla.render(contexto)
+    else:
+        formulario1 = CursoFormulario()
 
-    return HttpResponse(documento)
-
-
-
-    # return HttpResponse(f"Mi mama se llama {mama.nombre}, tiene la edad de: {mama.edad} y su cumple es el dia {mama.fechaCumple}")
+    return render(request,"cursos.html", {"form1":formulario1})
 
 
+def estudiantes(request):
 
+    return render(request,"estudiantes.html")
+
+def resultados(request):
+    
+    if request.GET["camada"]:
+
+        camada = request.GET["camada"]
+        cursos = Curso.objects.filter(camada__iexact=camada)
+
+        return render(request, "estudiantes.html", {"cursos":cursos, "camada":camada})
+    
+    else:
+
+        respuesta = "No hay datos ingresados."
+
+    return HTTPResponse(respuesta)
+
+def entregables(request):
+
+    return render(request,"entregables.html")
 
