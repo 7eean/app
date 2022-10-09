@@ -1,0 +1,163 @@
+
+
+body{
+    background: url('../../assets/background.home.jpg');
+    background-size: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(50,50,50);
+    background-blend-mode: soft-light;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+*{
+    margin: 0;
+}
+
+.logo1{
+    height:60px;
+    width:175px;
+    margin-left: 47px;
+}
+
+.navbarDiv{
+    display: flex;
+    margin-top: 25px;
+    justify-content: space-between;
+}
+
+.iniciarButton{
+    background-color: #e50914;
+    float: right;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    padding: 7px 17px;
+    color: white;
+    border-radius: 5px;
+    border-color: #e50914;
+    margin-right: 35px;
+}
+
+.emailDiv{
+    color: white;
+    margin: 0 auto;
+    font-family: sans-serif;
+    margin-top: 120px;
+}
+
+.emailDiv h1{
+    font-size: 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.emailDiv h3{
+    font-size: 1.6rem;
+    margin: 16px 75px;
+    text-align: center;
+    font-weight: 1;
+}
+
+.emailDiv h4{
+    font-size: 1.2rem;
+    margin: 16px 75px;
+    text-align: center;
+    font-weight: 1;
+    padding: 1em;
+}
+
+/* From uiverse.io by @alexruix */
+.inputDiv{
+    margin: 0 auto;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+   
+}
+.input-group {
+    display: flex;
+    align-items: center;
+}
+  
+.input {
+    min-height: 60px;
+    width: 500px;
+    padding: 0 1rem;
+    color: black;
+    font-size: 15px;
+    border: 1px solid #e50914;
+    border-radius: 6px 0 0 6px;
+    background-color: #fff;
+}
+  
+.button--submit {
+    min-height: 62px;
+    width: 200px;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: #e50914;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+}
+  
+.button--submit:hover {
+    background-color: #e50914;
+}
+  
+.input:focus, .input:focus-visible {
+    border-color: #e50914;
+    outline: none;
+}
+  
+@media (max-width: 720px){
+    .input {
+        min-height: 40px;
+        max-width: 200px;
+    }
+
+     
+.button--submit {
+    min-height: 42px;
+    width: 70px;
+    font-size: 10px;
+}
+
+.emailDiv h1{
+    font-size: 1.5rem;
+    max-width: 800px;
+}
+
+.emailDiv h3{
+    font-size: 1rem;
+    margin: 16px 75px;
+    text-align: center;
+    font-weight: 1;
+}
+
+.emailDiv h4{
+    font-size: 1rem;
+    margin: 16px 75px;
+    text-align: center;
+    font-weight: 1;
+    padding: 1em;
+}
+
+.logo1{
+    height:40px;
+    width:100px;
+    margin-left: 37px;
+}
+
+}
