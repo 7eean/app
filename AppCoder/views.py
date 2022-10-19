@@ -1,58 +1,74 @@
 from http.client import HTTPResponse
 from django.shortcuts import render
-from AppCoder.models import Curso
-from AppCoder.forms import CursoFormulario
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
+from AppCoder.forms import RegisterFormulario
 # Create your views here.
 
 def inicio(request):
 
-    return render(request,"index.html")
+    return render(request, "index.html")
 
-def cursos(request):
+def register(request):
 
-    cursoPython = Curso(nombre="Python", camada=41635)
-    cursoPython.save()
+    form = RegisterFormulario(request.POST or None)
+    if request.method == 'POST':
+        
 
-    if request.method == "POST":
+        if form.is_valid():
+            user=form.cleaned_data['username']
+            form.save()
 
-        formulario1 = CursoFormulario(request.POST)
+            return render(request,"homepage.html")
 
-        if formulario1.is_valid():
+        else:
+            form = RegisterFormulario()
 
-            info = formulario1.cleaned_data
+    return render(request,"autenticar/register.html", {'form':form})
 
-            curso = Curso(nombre=info["curso"], camada=info["camada"])
 
-            curso.save()
+def iniciarSesion(request):
 
-            return render(request, "index.html")
-    
+    if request.method == 'POST':
+
+        form = AuthenticationForm(request, data = request.POST)
+
+        if form.is_valid():
+
+            usuario=form.cleaned_data.get('username')
+            contra=form.cleaned_data.get('password')
+
+            user=authenticate(username=usuario, password=contra)
+
+            if user:
+
+                login(request, user)
+
+                return render(request,"homepage.html")
+
+        else: 
+
+            return render(request,"homepage.html", {'mensaje':"Datos incorrectos"})
+
     else:
-        formulario1 = CursoFormulario()
 
-    return render(request,"cursos.html", {"form1":formulario1})
+        form = AuthenticationForm()
+ 
+    return render(request,"autenticar/iniciarSesion.html", {'form':form})
 
+@login_required
+def home(request):
 
-def estudiantes(request):
+    return render(request,"homepage.html")
 
-    return render(request,"estudiantes.html")
+@login_required
+def about(request):
 
-def resultados(request):
-    
-    if request.GET["camada"]:
+    return render(request,"about.html")
 
-        camada = request.GET["camada"]
-        cursos = Curso.objects.filter(camada__iexact=camada)
+@login_required
+def reseña(request):
 
-        return render(request, "estudiantes.html", {"cursos":cursos, "camada":camada})
-    
-    else:
-
-        respuesta = "No hay datos ingresados."
-
-    return HTTPResponse(respuesta)
-
-def entregables(request):
-
-    return render(request,"entregables.html")
+    return render(request,"resenias.html")
 

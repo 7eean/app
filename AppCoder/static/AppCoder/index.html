@@ -4,30 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Netflix Argentina - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Home - Netflix Argentina</title>
 </head>
 <body>
-    <section class="mainContainer">
-        <div class="navbarDiv">
-            <div class="netLogoDiv">
-                <!-- <img src="./assets/logo.netflix.png" alt="Logo" class="logo1"/> -->
-            </div>
-            <div class="iniciarSesionDiv">
-                <a><button class="iniciarButton">Iniciar sesion</button></a>
-            </div>
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(20, 20, 20);">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="../assets/logo.netflix.png" width="95px"/></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" style="color: white;">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color: white;">Acerca de</a>
+              </li>
+          </div>
         </div>
-        <div class="emailDiv">
-            <h1>Películas y series ilimitadas y mucho más</h1>
-            <h3>Disfruta donde quieras. Cancela cuando quieras.</h3>
-            <h4>¿Quieres ver Netflix ya? Ingresa tu email para crear una cuenta o reiniciar tu membresía de Netflix.</h4>
-            <div class="inputDiv">
-                <div class="input-group">
-                    <input type="email" class="input" id="Email" name="Email" placeholder="Email" autocomplete="off">
-                    <input class="button--submit" value="Comenzar" type="submit">
-                </div>
+      </nav>
+    <div class="container-main">
+        <div class="logoBB">
+          <section>
+            <img src="./assets/logobreakingbad.png" width="350px"/>
+            <h2><strong>#3 in TV Shows Today</strong></h2>
+            <h5>El profesor calmado de química de una secundaria, Walter White cree que su vida no puede ser peor, toma una decisión desesperada con el fin de ganar más dinero.</h5>
+            <a href="#bbDiv"><button class="button"> Crear reseña</button></a>
+          </section>
+          <section>
+            <h2 class="Top10"><strong>Top10 TV Shows in Argentina Today: Crea una reseña</strong></h2>
+            <div class="top10container">
+              <div class="jefDiv" width="150px">
+                <h2>#1</h2><a href="./main.html"><img src="./assets/jeffreyDahmer.jpg" class="jeffreyD" ></a>
+              </div>
+              <div class="bcsDiv" width="150px">
+                <h2>#2</h2><a><img src="./assets/Better-Call-Saul.jpg" class="BetterCS"></a>
+              </div>
+              <div id="bbDiv" class="bbDiv" width="150px">
+                <h2>#3</h2><a><img src="./assets/BreakingBad.jpg" class="breakingB"></a>
+              </div>
+              <div class="dioDiv">
+                <h2>#4</h2><a><img src="./assets/DevilinOhio.jpg" class="DevilO"></a>
+              </div>
+              <div class="twDiv" >
+                <h2>#5</h2><a><img src="./assets/the-witcher.jpeg" class="Witcher"></a>
+              </div>
+              <div class="blackDiv" >
+                <h2>#6</h2><a><img src="./assets/The Black List.jpg" class="Blacklist"></a>
+              </div>
+              <div class="ozarkDiv" >
+                <h2>#7</h2><a><img src="./assets/ozark.jpg" class="ozark"></a>
+              </div>
+              <div class="darkDiv" >
+                <h2>#8</h2><a><img src="./assets/Dark.jpg" class="dark"></a>
+              </div>
             </div>
+          </section>
         </div>
-    </section>
+        <img class="jd" src="./assets/fondobb2.jpg">
+    </div>
+
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </html>

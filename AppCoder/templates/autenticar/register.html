@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static  %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'AppCoder/css/inicio.css' %}">
+    <title>Registro | Netflix Argentina </title>
+</head>
+<body class="body">
+    <section class="mainContainer">
+        <div class="navbarDiv">
+            <div class="netLogoDiv">
+                <img src="{% static 'AppCoder/assets/img/logo.netflix.png' %}" alt="Logo" class="logo1"/> 
+            </div>
+        </div>
+        <div class="formContainer">
+            <form class="loginForm" action="" method="POST">  {% csrf_token %}
+                <h3>Registrarse</h3>
+                {{form.as_p}}
+                {{mensaje}}
+                <button type="submit">Registrarme</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
+

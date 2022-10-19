@@ -1,0 +1,48 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block title %}
+Home - Netflix
+{% endblock %}
+
+{% block content %}
+<div class="logoBB">
+    <section>
+      <img src="./assets/logobreakingbad.png" width="350px"/>
+      <h2><strong>#3 in TV Shows Today</strong></h2>
+      <h5>El profesor calmado de química de una secundaria, Walter White cree que su vida no puede ser peor, toma una decisión desesperada con el fin de ganar más dinero.</h5>
+      <a href="#bbDiv"><button class="button"> Crear reseña</button></a>
+    </section>
+    <section>
+      <h2 class="Top10"><strong>Top10 TV Shows in Argentina Today: Crea una reseña</strong></h2>
+      <div class="top10container">
+        <div class="jefDiv" width="150px">
+          <h2>#1</h2><a href="./main.html"><img src="./assets/jeffreyDahmer.jpg" class="jeffreyD" ></a>
+        </div>
+        <div class="bcsDiv" width="150px">
+          <h2>#2</h2><a><img src="./assets/Better-Call-Saul.jpg" class="BetterCS"></a>
+        </div>
+        <div id="bbDiv" class="bbDiv" width="150px">
+          <h2>#3</h2><a><img src="./assets/BreakingBad.jpg" class="breakingB"></a>
+        </div>
+        <div class="dioDiv">
+          <h2>#4</h2><a><img src="./assets/DevilinOhio.jpg" class="DevilO"></a>
+        </div>
+        <div class="twDiv" >
+          <h2>#5</h2><a><img src="./assets/the-witcher.jpeg" class="Witcher"></a>
+        </div>
+        <div class="blackDiv" >
+          <h2>#6</h2><a><img src="./assets/The Black List.jpg" class="Blacklist"></a>
+        </div>
+        <div class="ozarkDiv" >
+          <h2>#7</h2><a><img src="./assets/ozark.jpg" class="ozark"></a>
+        </div>
+        <div class="darkDiv" >
+          <h2>#8</h2><a><img src="./assets/Dark.jpg" class="dark"></a>
+        </div>
+      </div>
+    </section>
+</div>
+<img class="jd" src="./assets/fondobb2.jpg">
+{% endblock %}

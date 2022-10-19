@@ -1,3 +1,34 @@
-{% extends "padre.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static  %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'AppCoder/css/inicio.css' %}">
+    <title>Netflix Argentina</title>
+</head>
+<body class="body">
+    <section class="mainContainer">
+        <div class="navbarDiv">
+            <div class="netLogoDiv">
+                <img src="{% static 'AppCoder/assets/img/logo.netflix.png' %}" alt="Logo" class="logo1"/> 
+            </div>
+            <div class="iniciarSesionDiv">
+                <a href="{% url 'Login' %}"><button class="iniciarButton">Iniciar sesion</button></a>
+            </div>
+        </div>
+        <div class="emailDiv">
+            <h1>Películas y series ilimitadas y mucho más</h1>
+            <h3>Disfruta donde quieras. Cancela cuando quieras.</h3>
+            <h4>¿Quieres ver Netflix ya? Toca "comenzar" para crear una cuenta.</h4>
+            <div class="inputDiv">
+                    <div class="input-group">
+                        <a href="{% url 'Register' %}"><input class="button--submit" value="Comenzar" type="submit"></a>
+                    </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
 
-{% load static %}
