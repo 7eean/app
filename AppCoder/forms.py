@@ -1,4 +1,6 @@
+from dataclasses import fields
 from django import forms
+from AppCoder.models import Series
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -16,3 +18,10 @@ class RegisterFormulario(UserCreationForm):
 
         model = User
         fields = ['username', 'email', 'password1', 'password2']
+
+class reseniaFormulario(forms.ModelForm):
+
+    class Meta:
+
+        model = Series
+        fields = ['nombre', 'reseña', 'imagen']

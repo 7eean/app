@@ -1,0 +1,20 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block title %}
+Reseñas - Netflix
+{% endblock %}
+
+{% block content %}
+<div class="logoBB">
+    <section>
+        <img src="../media/devilLogo.png" width="350px" style="margin-top: 160px;"/>
+        <h2 style="margin-top: 30px;"><strong>#3 in TV Shows Today</strong></h2>
+        <h5>El profesor calmado de química de una secundaria, Walter White cree que su vida no puede ser peor, toma una decisión desesperada con el fin de ganar más dinero.</h5>
+        <a href="#bbDiv"><button class="button">Crea tu propia reseña</button></a>
+        <a href="{% url 'Home' %}"><button class="button">Volver</button></a>
+      </section>
+</div>
+<img class="jd" src="../media/devilBanner.png"/>
+{%endblock%}

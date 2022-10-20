@@ -1,0 +1,33 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block title %}
+Reseñas - Netflix
+{% endblock %}
+
+{% block content %}
+<div class="logoBB">
+    <section>
+        <div class="card mb-4">
+            {% if resultados %}
+
+            {% for r in resultados %}
+
+                <p>De la película: {{r.nombre}},</p>
+                <p>Reseña: {{r.reseña}}</p>
+
+                <img src="{{r.imagen.url}}" alt="No hay imagen.">
+
+            {% endfor %}
+
+            {% else %}
+
+            <p>No hay reseñas de esa película.</p>
+
+            {% endif %}
+        
+      </section>
+</div>
+<img class="jd" src="../media/reseniasBanner.jpg"/>
+{%endblock%}

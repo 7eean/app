@@ -13,20 +13,37 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from audioop import add
 from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from AppCoder.views import register, home, about, reseña, inicio, iniciarSesion
+from AppCoder.views import *
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/', inicio, name="Inicio"),
     path('homepage/', home, name="Home"),
     path('about/', about, name="About"),
-    path('reseñas/', reseña, name="Entregables"),
+    #Autenticar
     path('register/', register, name="Register"),
     path('login/', iniciarSesion, name="Login"),
+    path('logout/', LogoutView.as_view(template_name='autenticar/logout.html'), name="Logout"),
+    
+    #Reseñas
+    path('reseñas/buscar', reseñaBuscador, name="Reseñas"),
+    path('buscar/', buscar),
+    path('agregar', addReseña, name="AddReseñas"),
+    path('reseña/JeffreyDahmer', reseniaDahmer, name="RDahmer"),
+    path('reseña/BetterCallSaul', reseniaSaul, name="Saul"),
+    path('reseña/BreakingBad', reseniaBreaking, name="Breaking"),
+    path('reseña/DevilInOhio', reseniaDevil, name="Devil"),
+    path('reseña/TheWitcher', reseniaWitcher, name="Witcher"),
+    path('reseña/TheBlackList', reseniaBlacklist, name="Blacklist"),
+    path('reseña/Ozark', reseniaOzark, name="Ozark"),
+    path('reseña/Dark', reseniaDark, name="Dark"),
+
 ]
 
 

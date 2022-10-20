@@ -1,0 +1,27 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block title %}
+Reseñas - Netflix
+{% endblock %}
+
+{% block content %}
+<div class="logoBB">
+    <section>
+        {% comment %} <img src="../media/dahmerLogo.png" width="350px"/>
+        <h2><strong>#3 in TV Shows Today</strong></h2> {% endcomment %}
+        <form action="" enctype="multipart/form-data" method="POST">  {% csrf_token %}
+
+            <table>
+                {{form.as_table}}
+            </table>
+        
+            <input type="submit" value="Enviar">
+        
+        
+        </form>        
+      </section>
+</div>
+<img class="jd" src="../media/reseniasBanner.jpg"/>
+{%endblock%}
