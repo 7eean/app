@@ -7,24 +7,19 @@ Reseñas - Netflix
 {% endblock %}
 
 {% block content %}
-<div class="logoBB">
+<div class="logoBB" style="color:white; margin-left: 480px;">
     <section>
-        <div class="card mb-4">
+        <div style="text-align:center; background-color:#00000094;">
             {% if resultados %}
-
             {% for r in resultados %}
-
-                <p>De la película: {{r.nombre}},</p>
-                <p>Reseña: {{r.reseña}}</p>
-
-                <img src="{{r.imagen.url}}" alt="No hay imagen.">
-
+            <img src="{{r.imagen.url}}" width="550px" alt='No hay imagen.' style="margin-top: 40px;"/>
+            <h2 style="margin-top: 30px;"><strong>Película: {{r.nombre}}</strong></h2>
+            <h5>Reseña: {{r.reseña}}</h5>
+            <a href="{% url 'AddReseñas' %}"><button class="button">Crea tu propia reseña</button></a>
+            <a href="{% url 'Home' %}"><button class="button">Volver</button></a>
             {% endfor %}
-
             {% else %}
-
             <p>No hay reseñas de esa película.</p>
-
             {% endif %}
         
       </section>

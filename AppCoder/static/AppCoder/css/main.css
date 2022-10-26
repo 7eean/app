@@ -10,6 +10,7 @@
     margin-left: 60px;
 }
 
+
 .navbar{
     z-index: 1;
 }
@@ -113,8 +114,18 @@
 }
 
 .cardRes{
+    margin-left: 400px;
+    margin-top: 50px;
+}
+
+#cardRes{
     margin-left: 300px;
     margin-top: 50px;
+}
+
+#cardRes p {
+    color: black;
+    text-align: center;
 }
 
 .cardRes p{
