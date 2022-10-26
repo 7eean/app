@@ -29,8 +29,8 @@ urlpatterns = [
     #Autenticar
     path('register/', register, name="Register"),
     path('login/', iniciarSesion, name="Login"),
-    path('logout/', LogoutView.as_view(template_name='autenticar/logout.html'), name="Logout"),
-    
+    path('logout/', LogoutView.as_view(template_name='autenticar/iniciarSesion.html'), name="Logout"),
+    path("editarUsuario", editarUsuario, name="Editar Usuario"),
     #Reseñas
     path('reseñas/buscar', reseñaBuscador, name="Reseñas"),
     path('buscar/', buscar),

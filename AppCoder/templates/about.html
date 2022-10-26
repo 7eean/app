@@ -7,9 +7,23 @@ Acerca de mi - Netflix
 {% endblock %}
 
 {% block content %}
-    <section>
-        <div>
-            <h1>About me</h1>
+    <section style="background-color:#303030; height:130vh;">
+        <div class="aboutContainer">
+            <img class="imgMe" style="margin-top:50px;" width="30%" src='../media/aboutme.png' alt="img"/>
+            <div class="textContainer">
+                <h1 style="color:white;">About me</h1>
+                <p style="color:white;">Hi there!</p>
+                <p style="color:white;">My name is <strong>Leandro Gomez.</strong> I'm a software developer skilled in designing and creating web and mobile applications ith knoledge to develop any tast at <strong>Front-end</strong> or <strong>Back-end</strong></p>
+            </div>
+        </div>
+        <div class="aboutContainer">
+            <img class="imgApp" width="30%" src='../media/aboutApp.png' alt="img"/>
+            <div class="textContainer">
+                <h1 style="color:white;">About this app</h1>
+                <p style="color:white;">Netflix clon</p>
+                <p style="color:white;">This poject is being built with Python, django. Inspired by Netflix application, This application will continue to be constantly updated and improved over time. I aspire to improve it and apply better things to it.</p>
+                <h3 style="color:white;">Thank you for your time!</h3>
+            </div>    
         </div>
     </section>
 {% endblock %}

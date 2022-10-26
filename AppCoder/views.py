@@ -74,9 +74,10 @@ def addReseña(request):
     if request.method == 'POST':
 
         miFormulario=reseniaFormulario(request.POST, request.FILES)
-        informacion = reseniaFormulario.cleaned_data
        
         if miFormulario.is_valid():
+
+            informacion = miFormulario.cleaned_data
 
             estreno = Series(nombre=informacion['nombre'], reseña=informacion['reseña'], imagen=informacion['imagen'])
 
@@ -149,3 +150,30 @@ def reseniaOzark(request):
 def reseniaDark(request):
 
     return render(request,"resenias/creadas/dark.html")
+
+@login_required
+def editarUsuario(request):
+
+    usuario = request.user 
+
+    if request.method == "POST":    
+
+        miFormulario = RegisterFormulario(request.POST) 
+
+        if miFormulario.is_valid():
+
+            informacion = miFormulario.cleaned_data    
+
+            usuario.username = informacion['username']
+            usuario.email = informacion['email']
+            usuario.password1 = informacion['password1']
+            usuario.password2 = informacion['password1']
+            usuario.save()
+
+            return render(request, "homepage.html")
+
+    else:
+
+        miFormulario= RegisterFormulario(initial={'username':usuario.username, 'email':usuario.email})
+
+    return render(request, "Autenticar/editarUsuario.html",{'miFormulario':miFormulario, 'usuario':usuario.username})
